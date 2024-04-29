@@ -51,7 +51,7 @@ match.
 """
 
 gdp = gdp.rename({"TIME": "Country_Name"}, axis = 1)
-    # print(gdp.head())
+gdp["Country_Name"] = gdp["Country_Name"].replace({"Itly": "Italy", "Czechia": "Czech Republic"})
 
 filename_countries = "countries.csv"
 countries = pd.read_csv(os.path.join(path, filename_countries))
